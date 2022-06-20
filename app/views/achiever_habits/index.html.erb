@@ -1,0 +1,13 @@
+<h1>Achiever habits</h1>
+
+<div id="achiever_habits">
+  <% @achiever_habits.each do |achiever_habit| %>
+    <%= render achiever_habit %>
+    <p>
+       <%= link_to "Show this achiever habit", @achiever_habit, class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New achiever habit", new_achiever_habit_path, class:'btn btn-dark', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+

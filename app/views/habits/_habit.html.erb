@@ -1,0 +1,22 @@
+<div id="<%= dom_id habit %>">
+
+      <tr>
+        <td>
+          <%= link_to habit.name, habit %>
+        </td>
+        <td>
+          <%= habit.frequency %></td>
+        <td>
+          <%= habit.time_demand %></td>
+
+        <td>
+          <% habit.achievers.each do |achiever| %>
+            <%= link_to achiever.name, achiever %><br>
+          <% end %>
+        </td>
+
+      </td>
+
+    </tr>
+
+</div>

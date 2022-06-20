@@ -1,0 +1,35 @@
+<%= form_with(model: book_recommendation) do |form| %>
+<% if book_recommendation.errors.any? %>
+  <div id="error_explanation" style="color: red">
+    <h2><%= pluralize(book_recommendation.errors.count, "error") %>
+      prohibited this book_recommendation from being saved:</h2>
+
+    <ul>
+      <% book_recommendation.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field form-group">
+  <%= form.label :title, style: "display: block" %>
+  <%= form.text_field :title, class:"form-control", placeholder:"Title" %>
+</div>
+
+<div class="field form-group">
+  <%= form.label :author, style: "display: block" %>
+  <%= form.text_field :author, class:"form-control", placeholder:"Author" %>
+</div>
+
+<%= form.fields_for :achiever_book_recommendations do |child_form| %>
+<div class="field form-group">
+  <%= child_form.label :achiever_id, style: "display: block" %>
+  <%= child_form.collection_select :achiever_id, Achiever.order(:name),:id,:name, include_blank: true %>
+</div>
+<% end %>
+
+<div class="actions">
+<%= form.submit class:'btn btn-secondary'%>
+</div>
+<% end %>

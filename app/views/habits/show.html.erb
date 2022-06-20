@@ -1,0 +1,31 @@
+<%= render "table_header" %>
+
+<%= render @habit %>
+
+<%= render "table_footer" %>
+
+<div>
+
+  <% if user_signed_in? && current_user.id == 1 || user_signed_in? && current_user.id == @habit.user_id %>
+
+    <%= link_to "Edit this habit", edit_habit_path(@habit), class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+  <% end %>
+
+
+  <%= link_to "Back to habits", habits_path, class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+
+  <% if user_signed_in? && current_user.id == 1 || user_signed_in? && current_user.id == @habit.user_id %>
+
+  <%= button_to "Destroy this habit", @habit, method: :delete, class:'btn btn-danger', style:'margin-top:1%; margin-bottom: 1%' %>
+
+  <% end %>
+
+    <% if user_signed_in? %>
+
+    <%= link_to "Add achiever to the habit", new_achiever_habit_path, class:'btn btn-success', style:'margin-top:1%; margin-bottom: 1%' %>
+
+  <% end %>
+
+</div>

@@ -1,0 +1,42 @@
+<%= form_with(model: habit) do |form| %>
+<% if habit.errors.any? %>
+  <div id="error_explanation" style="color: red">
+    <h2><%= pluralize(habit.errors.count, "error") %>
+      prohibited this habit from being saved:</h2>
+
+    <ul>
+      <% habit.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field form-group">
+  <%= form.label :name, style: "display: block" %>
+  <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
+</div>
+
+<div class="field form-group">
+  <%= form.label :frequency, style: "display: block" %>
+  <%= form.text_field :frequency, class:"form-control", placeholder:"Frequency" %>
+</div>
+
+<div class="field form-group">
+  <%= form.label :time_demand, style: "display: block" %>
+  <%= form.text_field :time_demand, class:"form-control", placeholder:"Time demand" %>
+</div>
+
+<%= form.fields_for :achiever_habits do |child_form| %>
+<div class="field form-group">
+  <%= child_form.label :achiever_id, style: "display: block" %>
+  <%= child_form.collection_select :achiever_id, Achiever.order(:name),:id,:name, include_blank: true %>
+</div>
+
+<% end %>
+
+<div class="actions">
+<%= form.submit class:'btn btn-secondary'%>
+</div>
+
+<% end %>

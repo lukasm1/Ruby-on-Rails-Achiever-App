@@ -1,0 +1,20 @@
+<div id="<%= dom_id book_recommendation %>">
+
+      <tr>
+        <td>
+          <%= link_to book_recommendation.title, book_recommendation %>
+        </td>
+        <td>
+          <%= book_recommendation.author %></td>
+
+        <td>
+          <% book_recommendation.achievers.each do |achiever| %>
+            <%= link_to achiever.name, achiever %><br>
+          <% end %>
+        </td>
+
+      </td>
+
+    </tr>
+
+</div>

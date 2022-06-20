@@ -1,0 +1,18 @@
+<h1>Habits
+  <% if user_signed_in? %>
+
+    <%= link_to "Add habit", new_habit_path, class:'btn btn-secondary', style:'float: right; line-height: 200%;' %>
+  <% end %>
+</h1>
+
+<div id="habits">
+  
+  <%= render "table_header" %>
+
+  <% @habits.each do |habit| %>
+    <%= render habit %>
+  <% end %>
+
+  <%= render "table_footer" %>
+
+</div>

@@ -1,0 +1,12 @@
+<h1>Achiever book recommendations</h1>
+
+<div id="achiever_book_recommendations">
+  <% @achiever_book_recommendations.each do |achiever_book_recommendation| %>
+    <%= render achiever_book_recommendation %>
+    <p>
+        <%= link_to "Show this achiever book recommendation", @achiever_book_recommendation, class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+    </p>
+  <% end %>
+</div>
+
+  <%= link_to "New achiever book recommendation", new_achiever_book_recommendation_path, class:'btn btn-dark', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp

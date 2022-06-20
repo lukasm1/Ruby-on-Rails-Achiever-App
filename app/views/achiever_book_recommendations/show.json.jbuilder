@@ -1,0 +1,1 @@
+json.partial! "achiever_book_recommendations/achiever_book_recommendation", achiever_book_recommendation: @achiever_book_recommendation

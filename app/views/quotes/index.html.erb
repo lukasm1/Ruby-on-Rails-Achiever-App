@@ -1,0 +1,18 @@
+<h1>Quotes
+  <% if user_signed_in? %>
+
+    <%= link_to "Add quote", new_quote_path, class:'btn btn-secondary', style:'float: right; line-height: 200%;' %>
+  <% end %>
+</h1>
+
+<div id="quotes">
+
+<%= render "table_header" %>
+
+  <% @quotes.each do |quote| %>
+    <%= render quote %>
+  <% end %>
+
+<%= render "table_footer" %>
+
+</div>

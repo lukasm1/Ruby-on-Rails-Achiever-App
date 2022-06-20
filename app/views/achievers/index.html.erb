@@ -1,0 +1,15 @@
+<h1>Achievers
+  <% if user_signed_in? %>
+    <%= link_to "Add achiever", new_achiever_path, class:'btn btn-secondary', style:'float: right; line-height: 200%;' %>
+  <% end %>
+</h1>
+
+<%= render "table_header" %>
+
+  <% @achievers.each do |achiever| %>
+    <%= render achiever %>
+  <% end %>
+    
+<%= render "table_footer" %>
+
+</div>

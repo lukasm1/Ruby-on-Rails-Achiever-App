@@ -1,0 +1,11 @@
+<%= render @achiever_habit %>
+
+<div>
+
+  <%= link_to "Edit this achiever habit", edit_achiever_habit_path(@achiever_habit), class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+  <%= link_to "Back to achiever habits", achiever_habits_path, class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+  <%= button_to "Destroy this achiever habit", @achiever_habit, method: :delete, class:'btn btn-warning', style:'margin-top:1%; margin-bottom: 1%' %>
+
+</div>

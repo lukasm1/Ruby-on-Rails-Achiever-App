@@ -1,0 +1,31 @@
+<div id="<%= dom_id achiever %>">
+
+      <tr>
+        <td>
+          <%= link_to achiever.name, achiever %>
+        </td>
+        <td>
+          <%= achiever.area_of_expertise %></td>
+        <td>
+          <% achiever.habits.each do |habit| %>
+            <%= link_to habit.name, habit %><br>
+          <% end %>
+        </td>
+
+        <td>
+          <% achiever.book_recommendations.each do |book_recommendation| %>
+            <%= link_to book_recommendation.title, book_recommendation %><br>
+          <% end %>
+        </td>
+
+        <td>
+          <% achiever.quotes.each do |quote| %>
+            <%= link_to quote.text, quote %><br><br>
+          <% end %>
+        </td>
+
+      </td>
+
+    </tr>
+
+</div>

@@ -1,0 +1,28 @@
+<%= form_with(model: achiever) do |form| %>
+<% if achiever.errors.any? %>
+  <div id="error_explanation" style="color: red">
+    <h2><%= pluralize(achiever.errors.count, "error") %>
+      prohibited this achiever from being saved:</h2>
+
+    <ul>
+      <% achiever.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field form-group">
+  <%= form.label :name, style: "display: block" %>
+  <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
+</div>
+
+<div class="field form-group">
+  <%= form.label :area_of_expertise, style: "display: block" %>
+  <%= form.text_field :area_of_expertise, class:"form-control", placeholder:"Area of expertise" %>
+</div>
+
+<div class="actions">
+  <%= form.submit class:'btn btn-secondary'%>
+</div>
+<% end %>

@@ -1,0 +1,20 @@
+<h1>Book recommendations
+  <% if user_signed_in? %>
+
+    <%= link_to "Add new book recommendation", new_book_recommendation_path, class:'btn btn-secondary', style:'float: right; line-height: 200%;' %>
+
+  <% end %>
+
+</h1>
+
+<div id="book_recommendations">
+
+<%= render "table_header" %>
+
+  <% @book_recommendations.each do |book_recommendation| %>
+    <%= render book_recommendation %>
+  <% end %>
+
+<%= render "table_footer" %>
+
+</div>

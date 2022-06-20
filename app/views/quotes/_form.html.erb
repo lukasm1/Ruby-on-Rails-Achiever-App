@@ -1,0 +1,28 @@
+<%= form_with(model: quote) do |form| %>
+<% if quote.errors.any? %>
+  <div id="error_explanation" style="color: red">
+    <h2><%= pluralize(quote.errors.count, "error") %>
+      prohibited this quote from being saved:</h2>
+
+    <ul>
+      <% quote.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field form-group">
+  <%= form.label :text, style: "display: block" %>
+  <%= form.text_field :text, class:"form-control", placeholder:'"Quote text"' %>
+</div>
+
+<div class="field form-group">
+  <%= form.label :achiever_id, style: "display: block" %>
+  <%= form.collection_select :achiever_id, Achiever.order(:name),:id,:name, include_blank: true %>
+</div>
+
+<div class="actions">
+  <%= form.submit class:'btn btn-secondary'%>
+</div>
+<% end %>

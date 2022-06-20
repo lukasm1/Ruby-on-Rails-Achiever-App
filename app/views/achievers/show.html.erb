@@ -1,0 +1,36 @@
+<%= render "table_header" %>
+
+<%= render @achiever %>
+
+<%= render "table_footer" %>
+
+<div>
+
+  <% if user_signed_in? && current_user.id == 1 || user_signed_in? && current_user.id == @achiever.user_id %>
+
+    <%= link_to "Edit this achiever", edit_achiever_path(@achiever), class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+  <% end %>
+
+
+  <%= link_to "Back to achievers", achievers_path, class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+
+  <% if user_signed_in? && current_user.id == 1 || user_signed_in? && current_user.id == @achiever.user_id %>
+
+    <%= button_to "Destroy this achiever", @achiever, method: :delete, class:'btn btn-danger', style:'margin-top:1%; margin-bottom: 1%' %>
+
+  <% end %>
+
+
+  <% if user_signed_in? %>
+
+    <%= link_to "Add habit", new_habit_path, class:'btn btn-success', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+    <%= link_to "Add book recommendation", new_book_recommendation_path, class:'btn btn-warning', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+    <%= link_to "Add quote", new_quote_path, class:'btn btn-info', style:'margin-top:1%; margin-bottom: 1%' %>
+
+  <% end %>
+
+</div>

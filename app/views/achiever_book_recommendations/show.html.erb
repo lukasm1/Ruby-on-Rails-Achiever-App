@@ -1,0 +1,10 @@
+<%= render @achiever_book_recommendation %>
+
+<div>
+
+  <%= link_to "Edit this achiever book recommendation", edit_achiever_book_recommendation_path(@achiever_book_recommendation), class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+  <%= link_to "Back to achiever book recommendations", achiever_book_recommendations_path, class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+  <%= button_to "Destroy this achiever book recommendation", @achiever_book_recommendation, method: :delete, class:'btn btn-warning', style:'margin-top:1%; margin-bottom: 1%' %>
+</div>

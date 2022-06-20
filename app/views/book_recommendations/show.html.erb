@@ -1,0 +1,31 @@
+<%= render "table_header" %>
+
+<%= render @book_recommendation %>
+
+<%= render "table_footer" %>
+
+<div>
+
+    <% if user_signed_in? && current_user.id == 1 || user_signed_in? && current_user.id == @book_recommendation.user_id %>
+
+      <%= link_to "Edit this book recommendation", edit_book_recommendation_path(@book_recommendation), class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+    <% end %>
+
+
+    <%= link_to "Back to book recommendations", book_recommendations_path, class:'btn btn-light', style:'margin-top:1%; margin-bottom: 1%' %>&nbsp
+
+
+    <% if user_signed_in? && current_user.id == 1 || user_signed_in? && current_user.id == @book_recommendation.user_id %>
+
+      <%= button_to "Destroy this book recommendation", @book_recommendation, method: :delete, class:'btn btn-danger', style:'margin-top:1%; margin-bottom: 1%' %>
+
+    <% end %>
+
+    <% if user_signed_in? %>
+
+      <%= link_to "Add achiever to the book recommendation", new_achiever_book_recommendation_path, class:'btn btn-warning', style:'margin-top:1%; margin-bottom: 1%' %>
+
+    <% end %>
+
+</div>
